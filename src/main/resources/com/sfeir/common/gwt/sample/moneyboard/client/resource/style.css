@@ -1,0 +1,203 @@
+@def logoblue #1E4581;
+
+/* STYLES DU HEADER / FOOTER */
+@sprite .logo {
+	margin-top: 0px;
+	gwt-image: "logo";
+}
+
+@sprite .setting {
+	gwt-image: "setting";
+}
+
+.header {
+	color: #fff;
+	font-size: 0.95em;
+	background-color: logoblue;/* #0d7b68;*/
+}
+
+.marginHeader {
+	padding-top: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 1px;
+}
+
+/* .header .marginHeader a { */
+/* 	color: #fff; */
+/* 	text-decoration: underline; */
+/* } */
+
+.footer {
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	background-color: logoblue;
+	border: logoblue solid 1px;
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+	-webkit-box-shadow: 3px 3px 13px #0d0d0d;
+	-moz-box-shadow: 3px 3px 13px #0d0d0d;
+	box-shadow: 3px 3px 13px #0d0d0d;
+}
+/* FIN STYLES DU HEADER */
+/* STYLES DE BORDURES */
+.borderBottomImportant {
+	border-bottom: logoblue solid 3px;
+}
+
+.borderAll {
+	border: logoblue solid 1px;
+	-webkit-box-shadow: 3px 6px 13px #0d0d0d;
+	-moz-box-shadow: 3px 6px 13px #0d0d0d;
+	box-shadow: 3px 6px 13px #0d0d0d;
+}
+/* FIN STYLES DE BORDURES */
+/* FIL d'ARIANE */
+.Ariane {
+	padding: 3px;
+	height: 30px;
+	background: #86bdb3;
+	border-bottom: logoblue solid 1px;
+	display: none;
+}
+
+.menuNavigation {
+	display: none;
+}
+/* FIN FIL d'ARIANE */
+/* STYLES FORMULAIRE */
+.submit, .submitLong, .reset {
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 2px solid #ccc;
+	border-bottom: 2px solid #ccc;
+	background-color: #7F97C2;
+	font-family: Arial;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	width: 100px;
+	height: 25px;
+	cursor: pointer;
+}
+
+.submitLong {
+	width: 200px;
+}
+
+.reset {
+	border-right: 2px solid #ccc;
+	border-bottom: 2px solid #ccc;
+	background-color: #eee;
+	color: #000;
+}
+
+.labelError {
+	color: #ff0000;
+}
+
+input.error {
+	border: 1px solid #ff0000;
+	color: #ff0000;
+}
+
+input.Long {
+	width: 250px;
+}
+
+input.Moyen {
+	width: 100px;
+}
+
+input.Court {
+	width: 50px;
+}
+
+.paddingLabelVertical {
+	font-size: 1.2em;
+	font-weight: bold;
+	padding-top: 27px;
+}
+
+input.bugLogin {
+	font-family: Arial;
+	background-color: #fff;
+	border: 1px solid #bbb;
+	margin:0.5em;
+	padding: 5px;
+	font-family: Arial;
+	font-size: 1.2em;
+	height: 30px;
+}
+
+.tooltip {
+	position: absolute;
+	z-index: 3000;
+	background: #d5edf8;
+	color: #205791;
+	border: 2px solid #92cae4;
+	padding: 5px;
+	font-size: 0.70em;
+}
+
+.tooltip h3,.tooltip div {
+	margin: 0;
+}
+
+/* FIN STYLES FORMULAIRE */
+/* Zone info client */
+.infoClient {
+	padding: 0.2em;
+	margin: 0;
+	border: 1px solid #ffd324;
+	background: #eee;
+	color: #514721;
+	border-color: #ffd324;
+}
+
+/* Zone navigation interne */
+.navigation {
+	padding: 0.2em;
+	margin: 0;
+	border: 1px solid #86bdb3;
+	background: #eee;
+	color: #514721;
+	border-color: #86bdb3;
+	text-align: right;
+}
+
+.colsep {
+	padding-left: 30px;
+}
+
+.important {
+	color: #FF0000;
+}
+/* FIN Zone info client / contrat */
+/* NAVIGATION (BOUTON ACTION) */
+.ui-menu {
+	position: absolute;
+	width: 200px;
+	z-index: 10000;
+}
+/* NAVIGATION (BOUTON ACTION) */
+/* Recherche avancée formulaire de recherche */
+.rechercheAvanceContainer {
+	display: none;
+}
+
+/* Styles Spécifiques aux tableaux */
+.focus {
+	background: #fff6bf;
+}
+
+/* Parseur GWT n'accepte pas la pseudo class nth-child(event), l'utilisation de @literal permet de lui dire de ne faire aucun traitement sur cette ligne
+@literal("tbody tr:nth-child(even) td.focus, tbody tr.even td.focus {background:#fff6bf;}");
+/* FIN Styles Spécifiques aux tableaux */
+
+@sprite .navfleche {
+	gwt-image:"fleche";
+	
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<!-- Feuille de style du framework BluePrint -->
+	<ui:with type="com.sfeir.common.gwt.client.resource.BluePrint"
+		field="fwk"></ui:with>
+	<!-- Feuille de style commune du projet -->
+	<ui:with type="com.sfeir.common.gwt.sample.moneyboard.client.resource.Resources"
+		field="res"></ui:with>
+	<ui:with type="com.sfeir.common.gwt.sample.moneyboard.client.messages.I18n"
+		field="msg" />
+	<ui:style>
+		.important {
+			font-weight: bold;
+		}
+	</ui:style>
+	<g:FormPanel ui:field="form" action="/import" encoding="multipart/form-data" method="POST">
+		<g:HTMLPanel width="400px" height="250px">
+			<h4><ui:text from="{msg.importFileDescription}"/></h4><br />
+			<g:FileUpload name="file" ui:field="file"></g:FileUpload><br />
+			<g:Hidden name="account" ui:field="account"></g:Hidden><br />
+			<g:Button styleName="{style.important}" ui:field="button"
+				text="{msg.submit}" />
+		</g:HTMLPanel>
+	</g:FormPanel>
+</ui:UiBinder> 

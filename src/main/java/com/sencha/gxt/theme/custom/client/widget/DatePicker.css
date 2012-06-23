@@ -1,0 +1,305 @@
+.datePicker {
+  border: 1px solid;
+  border-top:0 none;
+  position:relative;
+  -moz-outline:0 none;
+  outline:0 none;
+}
+
+.monthButton {
+  cursor: pointer; 
+}
+
+.monthButtonText {
+  
+}
+
+@sprite .downIcon {
+  gwt-image: "downIcon";
+  background-position: 0 -2px;
+  margin-left: 2px;
+  height: auto;
+  width: 16px;
+}
+
+@sprite .monthLeftButton {
+  gwt-image: "leftButton"; 
+  height: 16px;
+  width:16px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+@sprite .monthRightButton {
+  gwt-image: "rightButton"; 
+  height: 16px;
+  width:15px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+@sprite .leftYearIcon {
+  gwt-image: "leftIcon";
+  background-position: center 0;
+  width: auto;
+  cursor: pointer;
+}
+
+@sprite .rightYearIcon {
+  gwt-image: "rightIcon"; 
+  background-position: center 0;
+  width: auto;
+  cursor: pointer;
+}
+
+@sprite .header {
+  gwt-image: "header"; 
+  height: auto;
+}
+
+.datePicker,.datePicker a {
+  font-size: 11px;
+  -moz-outline:0 none;
+  outline:0 none;
+}
+
+.x-date-days {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.x-date-days td {
+  width: 25px;
+  border: none;
+}
+
+.x-date-days td span {
+  display: block;
+  padding: 2px 7px 2px 2px;
+}
+
+.x-date-days td {
+  border-bottom: 1px solid #A3BAD9;
+  border-collapse: separate;
+  color: #233D6D;
+  cursor: default;
+  font-family: arial, helvetica, tahoma, sans-serif;
+  font-size: 10px;
+  font-size-adjust: none;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: normal;
+  padding: 0pt;
+  text-align: right !important;
+}
+
+.inner, .inner td, .inner th {
+  border-collapse:separate;
+}
+
+.middle,.x-date-left,.x-date-right {
+  background: repeat-x 0 -83px;
+  overflow:hidden;
+}
+
+.middle .x-btn-tc,.middle .x-btn-tl,.middle .x-btn-tr,
+.middle .x-btn-mc,.middle .x-btn-ml,.middle .x-btn-mr,
+.middle .x-btn-bc,.middle .x-btn-bl,.middle .x-btn-br{
+  background:transparent !important;
+  vertical-align:middle;
+}
+
+.middle .x-btn-mc em.x-btn-arrow {
+  background:transparent no-repeat right 0;
+}
+
+.x-date-right, .x-date-left {
+  width:18px;
+}
+
+.x-date-right{
+  text-align:right;
+}
+
+.middle {
+  padding-top:6px;
+  padding-bottom:6px;
+  width:130px;  
+}
+
+table.inner {
+  width:100%;
+  table-layout:fixed;
+}
+
+.inner th {
+  width:25px;
+}
+
+.inner th {
+  background: repeat-x left top;
+  text-align:right !important;
+  border-bottom: 1px solid;
+  cursor:default;
+  padding:0;
+  border-collapse:separate;
+}
+
+.inner th span {
+  display:block;
+  padding:2px;
+  padding-right:7px;
+}
+
+.inner td {
+  border: 1px solid;
+  text-align:right;
+  padding:0;
+}
+
+.inner a {
+  padding:2px 5px;
+  display:block;
+  text-decoration:none;
+  text-align:right;
+  zoom:1;
+}
+.inner .x-date-active {
+  cursor:pointer;
+  color:black;
+}
+
+.inner .x-date-selected a {
+  background: repeat-x left top;
+  border:1px solid;
+  padding:1px 4px;
+}
+
+.inner .x-date-today a{
+  border: 1px solid;
+  padding:1px 4px;
+}
+
+.inner .x-date-prevday a,.inner .x-date-nextday a {
+  text-decoration:none !important;
+}
+
+.x-date-bottom {
+  padding:4px;
+  border-top: 1px solid;
+  background: repeat-x left top;
+}
+
+@sprite .x-date-bottom {
+  border-top-color:#a3bad9;
+  background-color:#dfecfb;
+  gwt-image: "footer";
+  height: auto; 
+}
+
+.inner a:hover, .x-date-inner .x-date-disabled a:hover{
+  text-decoration:none !important;
+}
+
+.inner .x-date-disabled a {
+  cursor:default;
+}
+
+.x-date-mmenu .x-menu-item {
+  padding:1px 24px 1px 4px;
+  white-space: nowrap;
+}
+
+.x-date-mmenu .x-menu-item .x-menu-item-icon {
+  width:10px;
+  height:10px;
+  margin-right:5px;
+  background-position:center -4px !important;
+}
+
+.x-date-mp {
+  position:absolute;
+  left:0;
+  top:0;
+
+}
+
+.x-date-mp td {
+  padding:2px;
+  font:normal 11px arial, helvetica,tahoma,sans-serif;
+}
+
+td.x-date-mp-month,td.x-date-mp-year,td.x-date-mp-ybtn {
+  border: 0 none;
+  text-align:center;
+  vertical-align: middle;
+  width:25%;
+}
+
+.x-date-mp-ok {
+	margin-right:3px;
+}
+
+.x-date-mp-btns button {
+  text-decoration:none;
+  text-align:center;
+  text-decoration:none !important;
+  border:1px solid;
+  padding:1px 3px 1px;
+  cursor:pointer;
+}
+
+.x-date-mp-btns {
+  background: repeat-x left top;
+}
+
+.x-date-mp-btns td {
+  border-top: 1px solid;
+  text-align:center;
+}
+
+td.x-date-mp-month a,td.x-date-mp-year a {
+  display:block;
+  padding:2px 4px;
+  text-decoration:none;
+  text-align:center;
+}
+
+td.x-date-mp-month a:hover,td.x-date-mp-year a:hover {
+  text-decoration:none;
+  cursor:pointer;
+}
+
+td.x-date-mp-sel a {
+  padding:1px 3px;
+  background: repeat-x left top;
+  border:1px solid;
+}
+
+.x-date-mp-ybtn a {
+  overflow:hidden;
+  width:15px;
+  height:15px;
+  cursor:pointer;
+  background:transparent no-repeat;
+  display:block;
+  margin:0 auto;
+}
+
+.x-date-mp-ybtn {
+  text-align:center;
+}
+
+td.x-date-mp-sep {
+  border-right:1px solid;
+}
+
+.x-date-header .x-btn .x-btn-text {
+  color: #fff;
+}
+
+.inner .x-date-active-hover {
+  background: #ddecfe !important;
+}

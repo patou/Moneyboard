@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.4.0//EN" "http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd">
+<module rename-to="moneyboard">
+	<!-- Other module inherits -->
+	<inherits name='com.sfeir.common.gwt.Common' />
+
+	<!-- Inherit the default GWT style sheet. You can change -->
+	<!-- the theme of your GWT application by uncommenting -->
+	<!-- any one of the following lines. -->
+	<inherits name='com.google.gwt.user.theme.clean.Clean' />
+	<!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+	<inherits name='com.sencha.gxt.ui.GXT' />
+	<inherits name='com.sencha.gxt.theme.custom.Custom' />
+	<inherits name="com.googlecode.objectify.Objectify" />
+	<inherits name='com.google.gwt.visualization.Visualization'/>
+
+	<!-- Property configuration -->
+	<set-configuration-property name="viewfactory.suffixviewimpl" value="Impl" />	
+	<set-configuration-property name="checker.searchpackage" value="com.sfeir.common.gwt.sample.moneyboard.client" />	
+	<set-configuration-property name="layout.defaultlayoutplace" value="com.sfeir.common.gwt.sample.moneyboard.client.layout.LayoutPlace" />
+
+	<extend-property values="fr" name="locale"/>
+	<extend-property values="en" name="locale"/>
+	<set-property-fallback name="locale" value="en"/>
+
+	<!-- Specify the app entry point class. -->
+	<entry-point class='com.sfeir.common.gwt.sample.moneyboard.client.Moneyboard' />
+
+	<!-- Specify the paths for translatable code -->
+	<source path='client'>
+		<exclude name="**/*Test.java" />
+	</source>
+	<source path='shared'>
+		<exclude name="**/*Test.java" />
+	</source>
+</module>

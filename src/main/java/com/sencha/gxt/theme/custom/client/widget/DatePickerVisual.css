@@ -1,0 +1,103 @@
+.datePicker {
+  border-color: #1b376c;
+  background-color:#fff;
+}
+
+@sprite .x-date-days td {
+  gwt-image: "footer";
+  height: auto;
+}
+
+.middle,.x-date-left,.x-date-right {
+  color:#fff;
+  font:bold 11px "sans serif", tahoma, verdana, helvetica;
+}
+.middle .x-btn .x-btn-text {
+  color:#fff;
+}
+.middle .x-btn-mc em.x-btn-arrow {
+  background-image:url(../images/default/toolbar/btn-arrow-light.gif);
+}
+.x-date-right a {
+  background-image: url(../images/default/shared/right-btn.gif);
+}
+.x-date-left a{
+  background-image: url(../images/default/shared/left-btn.gif);
+}
+.inner th {
+  background-color:#dfecfb;
+  border-bottom-color:#a3bad9;
+  font:normal 10px arial, helvetica,tahoma,sans-serif;
+  color:#233d6d;
+}
+
+.inner td {
+  border-color:#fff;
+}
+.inner a {
+  font:normal 11px arial, helvetica,tahoma,sans-serif;
+  color:#000;
+}
+.inner .x-date-active{
+  color:#000;
+}
+
+.inner .x-date-selected a{
+    background-color:#dfecfb;
+	/* background-image:url(../images/default/shared/glass-bg.gif); */
+	border-color:#8db2e3;
+}
+.inner .x-date-today a {
+	border-color:darkred;
+}
+.inner .x-date-selected span{
+    font-weight:bold;
+}
+.inner .x-date-prevday a,.inner .x-date-nextday a {
+	color:#aaa;
+}
+
+.inner .x-date-disabled a {
+	background-color:#eee;
+	color:#bbb;
+}
+.x-date-mmenu{
+    background-color:#eee !important;
+}
+.x-date-mmenu .x-menu-item {
+	font-size:10px;
+	color:#000;
+}
+.x-date-mp {
+	background-color:#fff;
+}
+.x-date-mp td {
+	font:normal 11px arial, helvetica,tahoma,sans-serif;
+}
+.x-date-mp-btns button {
+  background-color:#083772;
+  color:#fff;
+  border-color: #3366cc #000055 #000055 #3366cc;
+  font:normal 11px arial, helvetica,tahoma,sans-serif;
+}
+
+.x-date-mp-btns {
+  background-color: #dfecfb;
+}
+
+.x-date-mp-btns td {
+  border-top-color: #c5d2df;
+}
+
+td.x-date-mp-month a,td.x-date-mp-year a {
+  color:#15428b;
+}
+td.x-date-mp-sel a {
+  background-color: #dfecfb;
+  border-color:#8db2e3;
+}
+
+td.x-date-mp-sep {
+   border-right-color:#c5d2df;
+}
+

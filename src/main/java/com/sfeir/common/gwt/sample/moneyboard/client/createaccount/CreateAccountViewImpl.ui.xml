@@ -1,0 +1,58 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:l="urn:import:com.sfeir.common.gwt.client.component.label">
+	<!-- Feuille de style du framework BluePrint -->
+	<ui:with type="com.sfeir.common.gwt.client.resource.BluePrint" field="fwk"></ui:with>
+	<!-- Feuille de style commune du projet -->
+	<ui:with type="com.sfeir.common.gwt.sample.moneyboard.client.resource.Resources" field="res"></ui:with>
+	<ui:with type="com.sfeir.common.gwt.sample.moneyboard.client.messages.I18n" field="msg" />
+	<ui:style>
+		/* Style spécifique à l'écran */
+		.listBank {
+			width: 300px;
+			height: 27px;
+		}
+		.codeBank {
+			width: 50px;
+			height: 27px;
+		}
+		.codeBranch {
+			width: 50px;
+			height: 27px;
+		}
+		.codeAccount {
+			width: 150px;
+			height: 27px;
+		}
+		.ribKey {
+			width: 20px;
+			height: 27px;
+		}
+		.name {
+			width: 500px;
+			height: 20px;
+		}
+	</ui:style>
+	<g:HTMLPanel styleName="{fwk.style.container}">
+    		<div class="{fwk.style.span14} {fwk.style.prepend1}">
+				<p>
+					<h3><ui:text from="{msg.selectBank}"/></h3>
+						<p><g:ValueListBox ui:field="listBank" styleName="{style.listBank}"></g:ValueListBox></p>
+					<h3><ui:text from="{msg.enterRib}"/></h3>
+					<p>
+						<g:TextBox ui:field="codeBank" maxLength="5" styleName="{style.codeBank}"></g:TextBox>
+						<g:TextBox ui:field="codeBranch" maxLength="5" styleName="{style.codeBranch}"></g:TextBox>
+						<g:TextBox ui:field="codeAccount" maxLength="11" styleName="{style.codeAccount}"></g:TextBox>
+						<g:TextBox ui:field="ribKey" maxLength="2" styleName="{style.ribKey}"></g:TextBox></p>	
+					<h3><ui:text from="{msg.accountName}"/></h3>
+						<p><g:TextArea ui:field="name" styleName="{style.name}"></g:TextArea></p>	
+						
+						<l:LabelDoubleBox text="{msg.currentAmount}" ui:field="currentAmount"/>
+						
+				<g:Button styleName="{res.style.reset}" ui:field="cancel"><ui:text from="{msg.cancel}"/></g:Button>
+           		<g:Button styleName="{res.style.submit}" ui:field="submit"><ui:text from="{msg.submit}"/></g:Button>
+            	</p>
+            </div>
+	    	<hr class="{fwk.style.space}"/>
+	</g:HTMLPanel>
+</ui:UiBinder> 

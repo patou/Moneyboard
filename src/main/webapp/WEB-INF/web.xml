@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
+
+	<!-- Servlets -->
+	<servlet>
+		<servlet-name>userService</servlet-name>
+		<servlet-class>com.sfeir.common.gwt.sample.moneyboard.server.UserServiceImpl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>accountService</servlet-name>
+		<servlet-class>com.sfeir.common.gwt.sample.moneyboard.server.AccountServiceImpl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>transactionsService</servlet-name>
+		<servlet-class>com.sfeir.common.gwt.sample.moneyboard.server.TransactionsServiceImpl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>importBank</servlet-name>
+		<servlet-class>com.sfeir.common.gwt.sample.moneyboard.server.admin.ImportBank</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>import</servlet-name>
+		<servlet-class>com.sfeir.common.gwt.sample.moneyboard.server.ImportServlet</servlet-class>
+	</servlet>
+
+	<!-- Mapping des servlets
+	* l'url-pattern utilise le nom du module gwt (dans le fichier gwt.xml, le parametre rename-to="") 
+		qui est le répertoire où sont généré les fichier javascript de GWT
+	* suivit du nom du service (définie dans l'interface du service avec l'anotation @RemoteServiceRelativePath("user")
+	 -->
+	<servlet-mapping>
+		<servlet-name>userService</servlet-name>
+		<url-pattern>/moneyboard/user</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>accountService</servlet-name>
+		<url-pattern>/moneyboard/account</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>transactionsService</servlet-name>
+		<url-pattern>/moneyboard/transactions</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>importBank</servlet-name>
+		<url-pattern>/admin/importBank</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>import</servlet-name>
+		<url-pattern>/import</url-pattern>
+	</servlet-mapping>
+	
+	<security-constraint>
+        <web-resource-collection>
+        	<web-resource-name>Administration</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>Moneyboard.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>

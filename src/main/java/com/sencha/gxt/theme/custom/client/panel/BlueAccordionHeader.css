@@ -1,0 +1,11 @@
+.header {
+  padding-top: 4px;
+  padding-bottom: 3px;
+  border-top: 0 none;
+  height: auto;
+}
+
+.headerText {
+  color: #222222;
+  font-weight: normal;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:core="urn:import:com.sencha.gxt.widget.core.client" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:l="urn:import:com.sfeir.common.gwt.client.component.label"
+	xmlns:c="urn:import:com.google.gwt.user.cellview.client" xmlns:d="urn:import:com.google.gwt.user.datepicker.client"
+	xmlns:v="urn:import:com.google.gwt.visualization.client.visualizations"
+	xmlns:chart="urn:import:com.sfeir.common.gwt.sample.moneyboard.client.chart" xmlns:view="urn:import:com.sfeir.common.gwt.sample.moneyboard.client.view">
+	<!-- Feuille de style du framework BluePrint -->
+	<ui:with type="com.sfeir.common.gwt.client.resource.BluePrint"
+		field="fwk"></ui:with>
+	<!-- Feuille de style commune du projet -->
+	<ui:with type="com.sfeir.common.gwt.sample.moneyboard.client.resource.Resources"
+		field="res"></ui:with>
+	<ui:with type="com.sfeir.common.gwt.sample.moneyboard.client.messages.I18n"
+		field="msg" />
+	<ui:style type="com.sfeir.common.gwt.sample.moneyboard.client.solde.SoldeViewImpl.CSS">
+		/* Style spécifique à l'écran */
+		.accountList {
+			margin-top: 5px;
+		}
+		
+		.leftCol {
+			width: 250px;
+			margin: 0px 10px;
+		}
+		
+		.submit {
+			width: 80px;
+		}
+		
+		.tablePanel td {
+			vertical-align: middle;
+			padding: 5px;
+		}
+		
+		.cell {
+			
+		}
+		
+		.green {
+			color: #409633;
+		}
+		
+		.red {
+			color: #EC756C;
+		}
+		
+		.dateColumn {
+			margin: 0px;
+			padding: 3px;
+			color: #95959A;
+			font-size: 14px;
+			text-align: center;
+			font-weight: bold;
+		}
+		
+		.descriptionColum b {
+			color: #32587D;
+			font-size: 14px;
+			display: block;
+		}
+		
+		.descriptionColum i {
+			color: #65677D;
+			font-size: 12px;
+			display: block;
+		}
+		
+		.descriptionColum img {
+			margin-right: 2px;
+			vertical-align:middle;
+		}
+		
+		.amountColum big {
+			font-size: 16px;
+			display: block;
+			text-align: right;
+		}
+		
+		.amountColum i {
+			font-size: 10px;
+			display: block;
+		}
+		
+		.catColum select {
+			color: #497095;
+			border-color: #E4ECF8;
+			border-radius: 20px;
+			background: transparent;
+			-webkit-appearance: textfield;
+			-moz-appearance: textfield;
+			text-align: center;
+		}
+	</ui:style>
+	<g:HTMLPanel styleName="{fwk.style.container}">
+		<p style="padding:5px;">
+			<!-- <ui:text from="{msg.filterBeetween}" /> -->
+			<!-- <d:DateBox></d:DateBox> -->
+			<!-- <ui:text from="{msg.a}" /> -->
+			<!-- <d:DateBox></d:DateBox> -->
+			<g:Image url="/timer.png" styleName="{fwk.style.span22} {fwk.style.last}" width="898px"></g:Image>
+		</p>
+		<div style="clear:both;height: 5px;"></div>
+		<div class="{fwk.style.span8} {style.leftCol}">
+			<core:FramedPanel headingText="{msg.soldeEvolution}">
+				<chart:LineChartWidget width="100%" height="200px"
+					ui:field="lineChart"></chart:LineChartWidget>
+			</core:FramedPanel>
+			<g:SimplePanel ui:field="listAccount" styleName="{style.accountList}"></g:SimplePanel>
+		</div>
+		<div class="{fwk.style.span16} {fwk.style.last}">
+			<core:FramedPanel headingText="Opérations">
+				<g:HTMLPanel>
+					<view:EmptyTransaction ui:field="emptyTransaction"
+						visible="false"></view:EmptyTransaction>
+					<g:SimplePanel ui:field="tablePanel" styleName="{style.tablePanel}"></g:SimplePanel>
+					<c:SimplePager ui:field='pager' />
+				</g:HTMLPanel>
+			</core:FramedPanel>
+		</div>
+		<hr class="{fwk.style.space}" />
+	</g:HTMLPanel>
+</ui:UiBinder> 

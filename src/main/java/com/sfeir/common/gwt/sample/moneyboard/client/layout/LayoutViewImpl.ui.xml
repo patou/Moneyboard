@@ -1,0 +1,258 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<!-- Feuille de style du framework BluePrint -->
+	<ui:with type="com.sfeir.common.gwt.client.resource.BluePrint"
+		field="fwk"></ui:with>
+	<!-- Feuille de style commune du projet -->
+	<ui:with type="com.sfeir.common.gwt.sample.moneyboard.client.resource.Resources"
+		field="res"></ui:with>
+	<ui:with type="com.sfeir.common.gwt.sample.moneyboard.client.messages.I18n"
+		field="msg" />
+
+	<ui:style>
+		@def logoblue #1E4581;
+		body {
+			font-family: Helvetica, Arial, sans-serif;
+		}
+		/* Style spécifique à l'écran */
+		.header {
+			-webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+			-moz-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+			box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+			border-bottom: 1px solid rgba(6, 10, 74, 0.2);
+			background: #244c7f;
+			background: literal("-moz-linear-gradient(top, #244c7f 0%, #24497d 2%, #264a7e 7%, #27477a 20%, #243f74 30%, #243b71 38%, #23386f 42%, #23376c 47%, #1d2a61 92%, #232963 98%, #060a4a 100%)");
+			background: literal("-webkit-gradient(linear, left top, left bottom, color-stop(0%, #244c7f), color-stop(2%, #24497d), color-stop(7%, #264a7e),color-stop(20%, #27477a), color-stop(30%, #243f74),color-stop(38%, #243b71), color-stop(42%, #23386f),color-stop(47%, #23376c), color-stop(92%, #1d2a61),color-stop(98%, #232963), color-stop(100%, #060a4a) )");
+			background: literal("-webkit-linear-gradient(top, #244c7f 0%, #24497d 2%, #264a7e 7%, #27477a 20%, #243f74 30%, #243b71 38%, #23386f 42%, #23376c 47%, #1d2a61 92%,	#232963 98%, #060a4a 100%)");
+			background: literal("-o-linear-gradient(top, #244c7f 0%, #24497d 2%, #264a7e 7%, #27477a 20%, #243f74 30%, #243b71 38%, #23386f 42%, #23376c 47%, #1d2a61 92%,#232963 98%, #060a4a 100%)");
+			background: literal("-ms-linear-gradient(top, #244c7f 0%, #24497d 2%, #264a7e 7%, #27477a 20%, #243f74 30%, #243b71 38%, #23386f 42%, #23376c 47%, #1d2a61 92%,	#232963 98%, #060a4a 100%)");
+			background: literal("linear-gradient(top, #244c7f 0%, #24497d 2%, #264a7e 7%, #27477a 20%, #243f74 30%, #243b71 38%, #23386f 42%, #23376c 47%, #1d2a61 92%,	#232963 98%, #060a4a 100%)");
+			filter: literal("progid:DXImageTransform.Microsoft.gradient(  startColorstr='#244c7f',endColorstr='#060a4a', GradientType=0 )");
+			display: block;
+			position: fixed;
+			top: 0;
+			float: left;
+			width: 100%;
+			z-index: 2000;
+			height: 65px;
+		}
+		
+		.headerCenter {
+			margin: 0 auto;
+			width: 950px;
+			position: relative;
+			color: #fff;
+		}
+		
+		.container {
+			margin-top: 60px;
+		}
+		
+		.nav-wrapper {
+			width: 630px;
+			float: right;
+			margin: 0;
+			padding: 0;
+			padding-top: 5px;
+			font-familly: Georgia, serif;
+		}
+		
+		.nav-btn {
+			text-decoration: none;
+			white-space: nowrap;
+			line-height: 60px;
+			font-size: 16px;
+			font-weight: bold;
+			color: #666;
+			padding: 24px 13px;
+			cursor: pointer;
+		}
+		
+		.blog-nav-btn a,.blog-nav-btn a:active,.blog-nav-btn a:visited {
+			text-decoration: none;
+			color: #fff;
+			width: 300px;
+		}
+		
+		.headerCenter a,.headerCenter a:active,.headerCenter a:visited {
+		}
+		
+		.headerCenter a:hover {
+			color: #BF3604;
+		}
+		
+		.blog-nav-btn {
+			vertical-align: middle;
+			display: inline-block;
+			width: 150px;
+			margin: 0 2px;
+			color: black;
+			list-style-type: none;
+		}
+		
+		.nav-arrow {
+			-webkit-transition: left opacity;
+			-moz-transition: left opacity;
+			-o-transition: left opacity;
+			transition: left opacity;
+			-webkit-transition-timing-function: ease-in-out;
+			-moz-transition-timing-function: ease-in-out;
+			-o-transition-timing-function: ease-in-out;
+			transition-timing-function: ease-in-out;
+			-webkit-transition-duration: 0.3s;
+			-moz-transition-duration: 0.3s;
+			-o-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			width: 100px;
+			height: 12px;
+			position: absolute;
+			top: 63px;
+			text-indent: -10000px;
+		}
+		
+		.marginHeader {
+			position: absolute;
+			position: absolute;
+			top: 1px;
+			right: 40px;
+		}
+		
+		.setting {
+			margin: 5px 0px;
+			padding: 10px;
+			-webkit-transition: left opacity;
+			-moz-transition: left opacity;
+			-o-transition: left opacity;
+			transition: left opacity;
+			-webkit-transition-timing-function: ease-in-out;
+			-moz-transition-timing-function: ease-in-out;
+			-o-transition-timing-function: ease-in-out;
+			transition-timing-function: ease-in-out;
+			-webkit-transition-duration: 0.3s;
+			-moz-transition-duration: 0.3s;
+			-o-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			border-left: solid thin white;
+			display: block;
+			background-position: center;
+		}
+		
+		a.setting:hover {
+			opacity: 0.5;
+		}
+		
+		a.setting:hover ul {
+			display: block;
+		}
+		
+		ul.settingPanel {
+			position: absolute;
+			z-index: 999;
+			top: 66px;
+			text-align: left;
+			border: 1px solid #BEBEBE;
+			background: white;
+			-moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+			-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+			color: #666;
+			right: -23px;
+			border-image: initial;
+			list-style: none;
+			font-size: 16px;
+			padding: 10px;
+		}
+		
+		ul.settingPanel li {
+			list-style: none;
+			padding: 0px;
+			margin:0px;
+		}
+		.error {
+			margin: 0 0 17px 0;
+		}
+	</ui:style>
+	<g:HTMLPanel styleName="">
+		<!-- Header Login -->
+		<div class="{style.header}">
+			<div class="{style.headerCenter}">
+				<div class="{fwk.style.right} {res.style.marginHeader} {style.setting}">
+				<g:Image
+					ui:field="settings" resource="{res.setting}"/>
+				</div> 
+				<ul class="{style.settingPanel}" ui:field="settingPanel" style="display:none;">
+				<li>
+					<a href="?locale=fr">Français</a>
+				</li>
+				<li>
+					<a href="?locale=en">English</a>
+				</li>
+				<li>
+					<hr />
+					<ui:text from="{msg.userActif} " />
+				</li>
+				<li>
+					<g:InlineLabel ui:field="user"></g:InlineLabel>
+				</li>
+				<li>
+					<g:Anchor ui:field="logout" href="javascript:;">
+						<ui:text from="{msg.logout}" />
+					</g:Anchor>
+				</li>
+				</ul>
+				<g:Label styleName="{res.style.logo} {fwk.style.span20}" ui:field="logo"><!-- -->
+				</g:Label>
+				<ul class="{style.nav-wrapper}">
+					<li class="{style.blog-nav-btn}">
+						<g:Anchor ui:field="menuSynthese" href="javascript:;"
+							styleName="{style.nav-btn}">
+							<ui:text from="{msg.synthese}" />
+						</g:Anchor>
+					</li>
+					<li class="{style.blog-nav-btn}">
+						<g:Anchor ui:field="menuRecette" href="javascript:;"
+							styleName="{style.nav-btn}">
+							<ui:text from="{msg.recette}" />
+						</g:Anchor>
+					</li>
+					<li class="{style.blog-nav-btn}">
+						<g:Anchor ui:field="menuDepense" href="javascript:;"
+							styleName="{style.nav-btn}">
+							<ui:text from="{msg.depense}" />
+						</g:Anchor>
+					</li>
+					<li class="{style.blog-nav-btn}">
+						<g:Anchor ui:field="menuSolde" href="javascript:;"
+							styleName="{style.nav-btn}">
+							<ui:text from="{msg.solde}" />
+						</g:Anchor>
+					</li>
+				</ul>
+
+				<div class="{res.style.navfleche} {style.nav-arrow}" style="left: 50px; "
+					ui:field="navfleche">v</div>
+			</div>
+		</div>
+		<!--<div class="{fwk.style.span4} {fwk.style.last}"></div> -->
+		<!-- FIN Header Login -->
+		<div class="{fwk.style.container} {style.container}">
+			<!-- Contenu principal -->
+			<div class="{fwk.style.span24} {res.style.borderAll}">
+
+				<hr class="{fwk.style.space}" />
+				<div class="{fwk.style.span22} {fwk.style.append1} {fwk.style.prepend1}">
+					<g:Label styleName="{fwk.style.error} {style.error}" visible="false"
+						ui:field="errorLabel" />
+				</div>
+				<g:SimplePanel ui:field="content"></g:SimplePanel>
+				<hr class="{fwk.style.space}" />
+			</div>
+			<!-- FIN Contenu principal -->
+
+			<!-- Footer -->
+			<div class="{fwk.style.span24} {res.style.footer}">&nbsp; </div>
+		</div>
+		<!-- FIN Footer -->
+	</g:HTMLPanel>
+</ui:UiBinder> 

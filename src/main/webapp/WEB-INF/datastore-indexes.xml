@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<datastore-indexes autoGenerate="false">
+	<datastore-index kind="BankBranch" ancestor="false">
+		<property name="codeBank" direction="asc" />
+		<property name="code" direction="asc" />
+	</datastore-index>
+	<datastore-index kind="Operations" ancestor="true"
+		source="manual">
+		<property name="date" direction="desc" />
+	</datastore-index>
+</datastore-indexes>

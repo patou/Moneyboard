@@ -1,0 +1,113 @@
+.topLeft,.top,.topRight {
+	height: auto;
+}
+
+.topLeft {
+	border-bottom: 1px solid;
+	border-color: #D6D6D6;
+}
+
+.left {
+	background-color: #fff;
+}
+
+.right {
+	background-color: #fff;
+}
+
+.content {
+	padding-top: 6px;
+}
+
+.bottom,.bottomLeft,.bottomRight {
+	height: 6px;
+}
+
+.contentArea {
+	position: relative;
+	outline: none;
+	border: 1px solid #D6D6D6;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 3px 3px 12px rgba(0,0,0,0.10);
+	-moz-box-shadow: 3px 3px 12px rgba(0,0,0,0.10);
+	box-shadow: 3px 3px 12px rgba(0,0,0,0.10);
+}
+
+.content {
+	overflow: visible;
+	height: auto;
+	width: auto;
+}
+
+.topLeft {
+	zoom: 1;
+	width: auto;
+	height: auto;
+}
+
+.top {
+	overflow: hidden;
+	width: auto;
+}
+
+.topRight {
+	zoom: 1;
+	width: auto;
+}
+
+.bottomLeft {
+	width: auto;
+	background-position: 0 bottom;
+	overflow: visble;
+	zoom: 1;
+	line-height: 1px;
+	font-size: 1px;
+}
+
+.bottom {
+	zoom: 1;
+	width: auto;
+	overflow: visible;
+	line-height: 1px;
+	font-size: 1px;
+}
+
+.bottomRight {
+	zoom: 1;
+	width: auto;
+	heigth: auto;
+	overflow: visible;
+	line-height: 1px;
+	font-size: 1px;
+}
+
+.left {
+	padding-left: value('bottomLeftBorder.getWidth', 'px');
+	zoom: 1;
+	overflow: visible;
+	height: auto;
+	width: auto;
+}
+
+.right {
+	background-position: right 0;
+	padding-right: value('rightBorder.getWidth', 'px');
+	overflow: visible;
+	width: auto;
+	height: auto;
+}
+
+.bodyWrap {
+	
+}
+
+.over {
+	
+}
+
+.pressed {
+	
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:client="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:l="urn:import:java.lang" xmlns:c="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:d="urn:import:com.google.gwt.user.datepicker.client" xmlns:v="urn:import:com.google.gwt.visualization.client.visualizations"
+	xmlns:chart="urn:import:com.sfeir.common.gwt.sample.moneyboard.client.chart">
+	<!-- Feuille de style du framework BluePrint -->
+	<ui:with type="com.sfeir.common.gwt.client.resource.BluePrint"
+		field="fwk"></ui:with>
+	<!-- Feuille de style commune du projet -->
+	<ui:with type="com.sfeir.common.gwt.sample.moneyboard.client.resource.Resources"
+		field="res"></ui:with>
+	<ui:with type="com.sfeir.common.gwt.sample.moneyboard.client.messages.I18n"
+		field="msg" />
+	<ui:style>
+		/* Style spécifique à l'écran */
+		.accountList {
+			width: 250px;
+			margin: 10px;
+		}
+		
+		.submit {
+			width: 80px;
+		}
+		
+		.tablePanel td {
+			vertical-align: middle;
+			padding: 5px;
+		}
+		
+		.cell {
+			
+		}
+		
+		.green {
+			color: #409633;
+		}
+		
+		.red {
+			color: #EC756C;
+		}
+		
+		.dateColumn {
+			margin: 0px;
+			padding: 3px;
+			color: #95959A;
+			font-size: 14px;
+			text-align: center;
+			font-weight: bold;
+		}
+		
+		.descriptionColum b {
+			color: #32587D;
+			font-size: 14px;
+			display: block;
+		}
+		
+		.descriptionColum i {
+			color: #65677D;
+			font-size: 12px;
+			display: block;
+		}
+		
+		.amountColum big {
+			font-size: 16px;
+			display: block;
+			text-align: right;
+		}
+		
+		.amountColum i {
+			font-size: 10px;
+			display: block;
+		}
+		
+		.catColum select {
+			color: #497095;
+			border-color: #E4ECF8;
+			border-radius: 20px;
+			background: transparent;
+			-webkit-appearance: textfield;
+			-moz-appearance: textfield;
+			text-align: center;
+		}
+		
+		.background {
+			background-color: white;
+		}
+	</ui:style>
+	<g:HTMLPanel styleName="{fwk.style.container}">
+		<p style="padding:5px;">
+			<!-- <ui:text from="{msg.filterBeetween}" /> -->
+			<!-- <d:DateBox></d:DateBox> -->
+			<!-- <ui:text from="{msg.a}" /> -->
+			<!-- <d:DateBox></d:DateBox> -->
+			<g:Image url="/timer.png" styleName="{fwk.style.span22} {fwk.style.last}" width="880px"></g:Image>
+		</p>
+		<g:SimplePanel ui:field="listAccount"
+			styleName="{fwk.style.span8} {style.accountList}"></g:SimplePanel>
+		<div class="{fwk.style.span16} {fwk.style.last}">
+			<container:PortalLayoutContainer
+				ui:field="portal" numColumns="2" addStyleNames="{style.background}">
+
+				<container:portlet column="0">
+					<client:Portlet ui:field="portlet1" headingText="{msg.soldeEvolution}"
+						height="250" collapsible="true" animCollapse="true">
+						<client:tool>
+							<button:ToolButton ui:field="portlet1Close"
+								icon="CLOSE" />
+						</client:tool>
+						<chart:LineChartWidget width="100%" height="250px"
+							ui:field="solde"></chart:LineChartWidget>
+					</client:Portlet>
+				</container:portlet>
+
+				<container:portlet column="0">
+					<client:Portlet ui:field="portlet2" headingText="{msg.balanceRecetteDepense}"
+						height="250" collapsible="true" animCollapse="true">
+						<client:tool>
+							<button:ToolButton ui:field="portlet2Close"
+								icon="CLOSE" />
+						</client:tool>
+						<chart:PieChartWidget ui:field="balance"
+							width="100%" height="250px"></chart:PieChartWidget>
+					</client:Portlet>
+				</container:portlet>
+
+				<container:portlet column="1">
+					<client:Portlet ui:field="portlet3"
+						headingText="{msg.repartitionDepenseCategory}" height="250"
+						collapsible="true" animCollapse="true">
+						<client:tool>
+							<button:ToolButton ui:field="portlet3Close"
+								icon="CLOSE" />
+						</client:tool>
+						<chart:PieChartWidget ui:field="depenseCategories"
+							width="100%" height="250px"></chart:PieChartWidget>
+					</client:Portlet>
+				</container:portlet>
+
+				<container:portlet column="1">
+					<client:Portlet ui:field="portlet4"
+						headingText="{msg.repartitionDepenseCategory}" height="250"
+						collapsible="true" animCollapse="true">
+						<client:tool>
+							<button:ToolButton ui:field="portlet4Close"
+								icon="CLOSE" />
+						</client:tool>
+						<chart:PieChartWidget ui:field="recetteCategories"
+							width="100%" height="250px"></chart:PieChartWidget>
+					</client:Portlet>
+				</container:portlet>
+
+				<container:portlet column="0">
+					<client:Portlet ui:field="portlet5" headingText="{msg.repartitionGeo}"
+						height="250" collapsible="true" animCollapse="true">
+						<client:tool>
+							<button:ToolButton ui:field="portlet5Close"
+								icon="CLOSE" />
+						</client:tool>
+						<chart:GeoChartWidget ui:field="geo"
+							width="100%" height="250px"></chart:GeoChartWidget>
+					</client:Portlet>
+				</container:portlet>
+
+			</container:PortalLayoutContainer>
+		</div>
+		<hr class="{fwk.style.space}" />
+	</g:HTMLPanel>
+</ui:UiBinder> 

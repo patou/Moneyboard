@@ -1,0 +1,26 @@
+.topLeft,.top,.topRight {
+  height: auto;
+}
+
+.topLeft {
+  border: none;
+}
+
+.left {
+  background-color: #ffffff;
+  padding-left: 6px;
+}
+
+.right {
+  background-color: #fffff;
+  padding-right: 6px;
+}
+
+.content {
+  padding-top: 0px;
+  background: #ffffff !important;
+}
+
+.bottom,.bottomLeft,.bottomRight {
+  height: 6px;
+}
